@@ -8,8 +8,6 @@
 import time
 import Adafruit_PCA9685
 from mpu6050 import mpu6050
-#import Kalman_filter
-#import PID
 
 '''
 change this variables to 0 to reverse all the servos.
@@ -80,22 +78,10 @@ D = 0
 '''
 >>> instantiation <<<
 '''
-"""
-X_pid = PID.PID()
-X_pid.SetKp(P)
-X_pid.SetKd(I)
-X_pid.SetKi(D)
-Y_pid = PID.PID()
-Y_pid.SetKp(P)
-Y_pid.SetKd(I)
-Y_pid.SetKi(D)
-"""
+
 pwm = Adafruit_PCA9685.PCA9685()
 pwm.set_pwm_freq(50)
-"""
-kalman_filter_X =  Kalman_filter.Kalman_filter(0.001,0.1)
-kalman_filter_Y =  Kalman_filter.Kalman_filter(0.001,0.1)
-"""
+
 try:
     sensor = mpu6050(0x68)
     mpu6050_connection = 1
@@ -115,7 +101,7 @@ Example: If you want the forhead of the robot to point down,
 target_X = 0
 target_Y = 0
 
-pmw0 = 0
+pwm0 = 0
 pwm1 = 0
 pwm2 = 0
 pwm3 = 0
@@ -667,7 +653,7 @@ def dove_Right_III(horizontal, vertical):
 
 
 def dove(step_input, speed, timeLast, dpi, command):
-    step_I  = step_input
+    #step_I  = step_input
     step_II = step_input + 2
 
     if step_II > 4:
@@ -930,58 +916,7 @@ def steady_X():
         pwm.set_pwm(8,0,pwm8)
         pwm.set_pwm(6,0,pwm6+steady_X_set)
 
-"""
-def steady():
-    global X_fix_output, Y_fix_output
-    if mpu6050_connection:
-        accelerometer_data = sensor.get_accel_data()
-        X = accelerometer_data['x']
-        X = kalman_filter_X.kalman(X)
-        Y = accelerometer_data['y']
-        Y = kalman_filter_Y.kalman(Y)
 
-        X_fix_output += -X_pid.GenOut(X - target_X)
-        X_fix_output = ctrl_range(X_fix_output, steady_range_Max, -steady_range_Max)
-
-        Y_fix_output += -Y_pid.GenOut(Y - target_Y)
-        Y_fix_output = ctrl_range(Y_fix_output, steady_range_Max, -steady_range_Max)
-
-        '''
-        LEFT_I
-        ''' 
-        left_I_input = ctrl_range((X_fix_output + Y_fix_output), steady_range_Max, steady_range_Min)
-        left_I(0, 35, left_I_input)
-
-        '''
-        LEFT_II
-        '''
-        left_II_input = ctrl_range((abs(X_fix_output*0.5)+Y_fix_output), steady_range_Max, steady_range_Min)
-        left_II(0, 35, left_II_input)
-
-        '''
-        LEFT_III
-        '''
-        left_III_input = ctrl_range((-X_fix_output + Y_fix_output), steady_range_Max, steady_range_Min)
-        left_III(0, 35, left_III_input)
-
-        '''
-        RIGHT_III
-        '''
-        right_III_input = ctrl_range((X_fix_output - Y_fix_output), steady_range_Max, steady_range_Min)
-        right_III(0, 35, right_III_input)
-
-        '''
-        RIGHT_II
-        '''
-        right_II_input = ctrl_range((abs(-X_fix_output*0.5)-Y_fix_output), steady_range_Max, steady_range_Min)
-        right_II(0, 35, right_II_input)
-
-        '''
-        RIGHT_I
-        '''
-        right_I_input = ctrl_range((-X_fix_output-Y_fix_output), steady_range_Max, steady_range_Min)
-        right_I(0, 35, right_I_input)
-"""
 
 def steadyTest():
     if leftSide_direction:
@@ -1104,43 +1039,10 @@ if __name__ == '__main__':
                 step = 1
             time.sleep(0.08)
         # '''
-        '''
-        while 1:
-            dove(1,-35,0.01,17,'no')
-            dove(2,-35,0.01,17,'no')
-            dove(3,-35,0.01,17,'no')
-            dove(4,-35,0.01,17,'no')
-        '''
-
-        #mpu6050Test()
-        #print(sensor.get_temp())
-        '''
-        steady_X()
-        while 1:
-            steady()
-            time.sleep(0.02)
-        '''
         
-        
-        '''
-        for i in range(0,9):
-            look_left()
-            time.sleep(1)
-        for i in range(0,16):
-            look_right()
-            time.sleep(1)   
-        time.sleep(1)
-        look_home()
-        '''
-
-        
-        
-        #pwm.set_all_pwm(0,0)
-        #pwm.set_all_pwm(0, 300)
-        #time.sleep(10)
     except KeyboardInterrupt:
         pwm.set_all_pwm(0, 300)
         time.sleep(1)
-        #clean_all()
+        
     
 
