@@ -1,9 +1,6 @@
 #! /usr/bin/python
 # File name   : move.py
 # Description : Controlling all servos
-# Website    : www.adeept.com
-# E-mail      : support@adeept.com
-# Author      : William
 # Date      : 2019/04/08
 import time
 import Adafruit_PCA9685
@@ -586,22 +583,20 @@ def clean_all():
 def destroy():
     clean_all()
 
-
+"""
 if __name__ == '__main__':
     step = 1
     move_stu = 1
     try:
-        # '''
         while 1:
             move(step, 35, 'no')
             step += 1
             if step > 4:
                 step = 1
             time.sleep(0.08)
-        # '''
         
     except KeyboardInterrupt:
         pwm.set_all_pwm(0, 300)
         time.sleep(1)
-            
+"""         
 
