@@ -124,16 +124,7 @@ Set a default pwm value for all servos.
 for i in range(0,16):
     exec('pwm%d=300'%i)
 
-'''
-Get raw data from mpu6050.
-'''
-def mpu6050Test():
-    while 1:
-        accelerometer_data = sensor.get_accel_data()
-        print('X=%f,Y=%f,Z=%f'%(accelerometer_data['x'],accelerometer_data['y'],accelerometer_data['x']))
-        time.sleep(0.3)
-
-        
+    
 def init_all():
     pwm.set_all_pwm(0,300)
     
@@ -582,21 +573,3 @@ def clean_all():
 
 def destroy():
     clean_all()
-
-"""
-if __name__ == '__main__':
-    step = 1
-    move_stu = 1
-    try:
-        while 1:
-            move(step, 35, 'no')
-            step += 1
-            if step > 4:
-                step = 1
-            time.sleep(0.08)
-        
-    except KeyboardInterrupt:
-        pwm.set_all_pwm(0, 300)
-        time.sleep(1)
-"""      
-

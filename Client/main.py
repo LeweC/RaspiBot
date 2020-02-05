@@ -21,7 +21,7 @@ if True:
                     step = 1
             """ 
             for i in range(18):
-                move.move(step, 35, 'left')
+                move.move(step, 35, 'right')
                 time.sleep(0.2)
                 step += 1
                 if step == 5:
