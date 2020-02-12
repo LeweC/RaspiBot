@@ -12,7 +12,7 @@ pinEcho = 8
 GPIO.setup(pinTrigger, GPIO.OUT)
 GPIO.setup(pinEcho, GPIO.IN)
 
-while True:
+def measure ():
 	# set Trigger to HIGH
 	GPIO.output(pinTrigger, True)
 	# set Trigger after 0.01ms to LOW
@@ -38,3 +38,4 @@ while True:
 
 	print ("Distance: %.1f cm" % distance)
 	time.sleep(1)
+	return distance
