@@ -6,8 +6,10 @@ if True:
     step = 1
     move.init_all()
     try:
-        while 1:   
-            if(ultrasonic.measure >= 15):
+        while 1:
+            distance = ultrasonic.measure()
+            print(distance)
+            if(distance >= 15):
                 print("fowart")
                 for i in range(24):
                     move.move(step, 35, 'no')
