@@ -10,14 +10,18 @@ if True:
             distance = ultrasonic.measure()
             print(distance)
             while(distance >= 15):
-                print("fowart")    
+                print("fowart")
+                distance = ultrasonic.measure()
+                print(distance)    
                 move.move(step, 35, 'no')
                 time.sleep(0.2)
                 step += 1
                 if step == 5:
                     step = 1
             else:
-                print("turn")    
+                print("turn")
+                distance = ultrasonic.measure()
+                print(distance)    
                 move.move(step, 35, 'left')
                 step += 1
                 if step > 4:
