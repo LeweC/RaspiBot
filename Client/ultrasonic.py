@@ -14,8 +14,6 @@ GPIO.setup(pinEcho, GPIO.IN)
 
 
 def measure():
-    GPIO.output(pinTrigger, False)
-    time.sleep(0.5)
     # set Trigger to HIGH
     GPIO.output(pinTrigger, True)
     # set Trigger after 0.01ms to LOW
@@ -41,7 +39,6 @@ def measure():
 
     print("Distance: %.1f cm" % distance)
     time.sleep(0.001)
-    GPIO.cleanup()
     return distance
 
 def closing():
