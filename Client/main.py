@@ -6,8 +6,8 @@ if True:
     step = 1
     move.init_all()
     while 1:
-        while(ultrasonic.measure() >= 15):
-            print("fowart")
+        while ultrasonic.measure() >= 15:
+            print("forward")
             print("------")        
             move.move(step, 35, 'no')
             time.sleep(0.2)
@@ -21,5 +21,4 @@ if True:
             step += 1
             if step == 5:
                 step = 1
-            time.sleep(0.2)    
-    
+            time.sleep(0.2)
