@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+import move
 
 # use Raspberry Pi board pin numbers
 GPIO.setmode(GPIO.BCM)
@@ -42,5 +43,6 @@ def measure():
     return distance
 
 def closing():
+    move.init_all()
     GPIO.output(pinTrigger, False)
     GPIO.cleanup()
