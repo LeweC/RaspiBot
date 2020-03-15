@@ -15,7 +15,7 @@ if True:
                 step += 1
                 if step == 5:
                   step = 1
-                time.sleep(0.4)
+                time.sleep(0.6)
             else:
                 print("turn")
                 print(step)
@@ -24,7 +24,7 @@ if True:
                 step += 1
                 if step == 5:
                     step = 1
-                time.sleep(0.4)
+                time.sleep(0.6)
     except KeyboardInterrupt:
         print("Ending Scipt")
         ultrasonic.closing()

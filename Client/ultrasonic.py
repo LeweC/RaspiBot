@@ -39,6 +39,7 @@ def measure():
     distance = (time_elapsed * 34300) / 2
 
     print("Distance: %.1f cm" % distance)
+    print(time_elapsed)
     time.sleep(0.001)
     return distance
 
