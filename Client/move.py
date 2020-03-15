@@ -567,15 +567,12 @@ def stand():
 
 def sensor_right():
     pwm.set_pwm(12,0,100)
-    print("ok1")
 
 def sensor_left():
-    pwm.set_pwm(12,0,10)
-    print("ok2")
+    pwm.set_pwm(12,0,500)
 
 def sensor_middle():
     pwm.set_pwm(12,0,300)
-    print("ok3")
 
 def release():
     pwm.set_all_pwm(0, 0)

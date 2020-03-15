@@ -1,6 +1,7 @@
 import move
 import ultrasonic
 import time
+import random
 
 if True:
     step = 1
@@ -39,12 +40,16 @@ if True:
                 move.sensor_middle()
                 time.sleep(2)
 
-                move.move(step, 35, 'left')
-                step += 1
-                if step == 5:
-                    step = 1
+                drehung = random.randint(10,20)
+                for x in range(drehung):
+                    print("Drehen",x)
+                    move.move(step, 35, 'left')
+                    step += 1
+                    if step == 5:
+                        step = 1
                 result = ultrasonic.measure()
                 time.sleep(0.6)
+
     except KeyboardInterrupt:
         print("Ending Scipt")
         ultrasonic.closing()
