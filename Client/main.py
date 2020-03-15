@@ -29,10 +29,16 @@ if True:
 
                 move.stand()
                 time.sleep(1)
+
                 move.sensor_right()
+                time.sleep(2)
+
                 move.sensor_left()
+                time.sleep(2)
+
                 move.sensor_middle()
-                time.sleep(1)
+                time.sleep(2)
+
                 move.move(step, 35, 'left')
                 step += 1
                 if step == 5:
