@@ -124,7 +124,7 @@ for i in range(0, 16):
 
 def init_all():
     pwm.set_all_pwm(0, 300)
-    pwm.set_pwm(12,0,150)
+    pwm.set_pwm(12,0,300)
 
 
 def ctrl_range(raw, max_genout, min_genout):
@@ -566,15 +566,15 @@ def stand():
 
 
 def sensor_right():
-    pwm.set_pwm(12,0,300)
+    pwm.set_pwm(12,0,100)
     print("ok1")
 
 def sensor_left():
-    pwm.set_pwm(12,0,0)
+    pwm.set_pwm(12,0,10)
     print("ok2")
 
 def sensor_middle():
-    pwm.set_pwm(12,0,150)
+    pwm.set_pwm(12,0,300)
     print("ok3")
 
 def release():
