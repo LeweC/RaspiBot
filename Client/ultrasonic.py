@@ -40,7 +40,7 @@ def measure():
 
     print("Distance: %.1f cm" % distance)
     time.sleep(0.001)
-    return distance
+    return distance, time_elapsed
 
 def closing():
     move.init_all()
