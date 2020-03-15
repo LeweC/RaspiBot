@@ -47,6 +47,7 @@ if True:
                     step += 1
                     if step == 5:
                         step = 1
+                    time.sleep(0.6)    
                 result = ultrasonic.measure()
                 time.sleep(0.6)
 
