@@ -32,7 +32,7 @@ if True:
                 move.sensor_right()
                 move.sensor_left()
                 move.sensor_middle()
-
+                time.sleep(1)
                 move.move(step, 35, 'left')
                 step += 1
                 if step == 5:
