@@ -1,4 +1,5 @@
 import move
+import ultrasonic
 import time
 
 if True:
@@ -6,26 +7,32 @@ if True:
     move.init_all()
     try:
         while 1:
-            for x in range(24):
+            result = ultrasonic.measure()
+            while result[0] >= 15:
+                print("forward")
+                print(step)
+                print(result[0])
+                print(result[1])
+                print("------")        
                 move.move(step, 35, 'no')
                 step += 1
-                if step > 4:
-                    step = 1
-                time.sleep(0.2)
-
-            for i in range(18):
+                if step == 5:
+                  step = 1
+                result = ultrasonic.measure()
+                time.sleep(0.6)
+            else:
+                print("turn")
+                print(step)
+                print(result[0])
+                print(result[1])
+                print("------")
                 move.move(step, 35, 'left')
-                time.sleep(0.2)
                 step += 1
                 if step == 5:
                     step = 1
-            """ 
-            for i in range(18):
-                move.move(step, 35, 'right')
-                time.sleep(0.2)
-                step += 1
-                if step == 5:
-                    step = 1
-            """
-    except:
-        move.clean_all()
+                result = ultrasonic.measure()
+                time.sleep(0.6)
+    except KeyboardInterrupt:
+        print("Ending Scipt")
+        ultrasonic.closing()
+        time.sleep(1)
