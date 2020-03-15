@@ -124,6 +124,7 @@ for i in range(0, 16):
 
 def init_all():
     pwm.set_all_pwm(0, 300)
+    pwm.set_pwm(12,0,150)
 
 
 def ctrl_range(raw, max_genout, min_genout):
@@ -564,8 +565,18 @@ def stand():
     pwm.set_pwm(11, 0, 300)
 
 
+def sensor_right():
+    pwm.set_pwm(12,0,300)
+
+def sensor_left():
+    pwm.set_pwm(12,0,0)
+
+def sensor_middle():
+    pwm.set_pwm(12,0,150)
+
 def release():
     pwm.set_all_pwm(0, 0)
+
 
 
 def clean_all():

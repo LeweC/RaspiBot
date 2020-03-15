@@ -26,6 +26,12 @@ if True:
                 print(result[0])
                 print(result[1])
                 print("------")
+
+                move.stand()
+                move.sensor_right()
+                move.sensor_left()
+                move.sensor_middle()
+                
                 move.move(step, 35, 'left')
                 step += 1
                 if step == 5:
