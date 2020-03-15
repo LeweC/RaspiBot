@@ -28,10 +28,11 @@ if True:
                 print("------")
 
                 move.stand()
+                time.sleep(1)
                 move.sensor_right()
                 move.sensor_left()
                 move.sensor_middle()
-                
+
                 move.move(step, 35, 'left')
                 step += 1
                 if step == 5:
