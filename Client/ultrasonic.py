@@ -8,7 +8,7 @@ GPIO.setmode(GPIO.BCM)
 # set GPIO Pins
 pinTrigger = 11
 pinEcho = 8
-
+time_elapsed = 0
 # set GPIO input and output channels
 GPIO.setup(pinTrigger, GPIO.OUT)
 GPIO.setup(pinEcho, GPIO.IN)
@@ -39,7 +39,6 @@ def measure():
     distance = (time_elapsed * 34300) / 2
 
     print("Distance: %.1f cm" % distance)
-    print(time_elapsed)
     time.sleep(0.001)
     return distance
 

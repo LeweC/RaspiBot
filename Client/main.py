@@ -1,6 +1,8 @@
 import move
 import ultrasonic
 import time
+from ultrasonic import time_elapsed 
+
 
 if True:
     step = 1
@@ -10,6 +12,7 @@ if True:
             while ultrasonic.measure() >= 15:
                 print("forward")
                 print(step)
+                print(time_elapsed)
                 print("------")        
                 move.move(step, 35, 'no')
                 step += 1
@@ -19,6 +22,7 @@ if True:
             else:
                 print("turn")
                 print(step)
+                print(time_elapsed)
                 print("------")
                 move.move(step, 35, 'left')
                 step += 1
