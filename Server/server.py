@@ -1,16 +1,15 @@
 import asyncio
+import datetime
+import random
 import websockets
 
-async def hello(websocket, path):
-    name = await websocket.recv()
-    print(f"< {name}")
+async def time(websocket, path):
+    while True:
+        now = datetime.datetime.utcnow().isoformat() + "Z"
+        await websocket.send(now)
+        await asyncio.sleep(random.random() * 3)
 
-    greeting = f"Hello {name}!"
-
-    await websocket.send(greeting)
-    print(f"> {greeting}")
-
-start_server = websockets.serve(hello, "192.168.178.112", 8001)
+start_server = websockets.serve(time, "192.168.178.112", 8001)
 
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
