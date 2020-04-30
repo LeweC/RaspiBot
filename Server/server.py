@@ -1,9 +1,16 @@
-import socket
+import asyncio
+import websockets
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind(("192.168.178.112", 8001))
-s.listen(5)
+async def hello(websocket, path):
+    name = await websocket.recv()
+    print(f"< {name}")
 
-while True:
-    clientsocket, address = s.accept()
-    print(f"Connection from {address} has been established.")
+    greeting = f"Hello {name}!"
+
+    await websocket.send(greeting)
+    print(f"> {greeting}")
+
+start_server = websockets.serve(hello, "192.168.178.112", 8001)
+
+asyncio.get_event_loop().run_until_complete(start_server)
+asyncio.get_event_loop().run_forever()
