@@ -5,7 +5,7 @@
             connection.onmessage = function (event) { 
             document.getElementById('result0').value=event.data;
             };
-            connection.onopen = () => connection.send('hello');
+            //connection.onopen = () => connection.send('hello');
             function sendMessage (message){
                 connection.send(message)
             }
