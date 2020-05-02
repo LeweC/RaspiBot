@@ -2,15 +2,21 @@ import asyncio
 import websockets
 
 async def hello(websocket, path):
-    async for message in websocket:
-        print(f"< {message}")
+    try:
+        async for message in websocket:
+            print(f"< {message}")
 
-        if message == "Standing":
-              greeting = f"{message}!"
-        else:
-            greeting = f"Moving {message}!"
-            await websocket.send(greeting)
-            print(f"> {greeting}")
+            if message == "Standing":
+                greeting = f"{message}!"
+            else:
+                greeting = f"Moving {message}!"
+                await websocket.send(greeting)
+                print(f"> {greeting}")
+    except:
+        print('Reconnecting')
+        await websockets.connect("192.168.178.112")
+        
+    
 
 start_server = websockets.serve(hello, "192.168.178.112", 8001)
 
