@@ -3,14 +3,17 @@ import websockets
 
 async def hello(websocket, path):
     async for message in websocket:
-        print(f"< {message}")
+        try:
+            print(f"< {message}")
 
-        if message == "Standing":
-            greeting = f"{message}!"
-        else:
-            greeting = f"Moving {message}!"
-            await websocket.send(greeting)
-            print(f"> {greeting}")
+            if message == "Standing":
+                greeting = f"{message}!"
+            else:
+                greeting = f"Moving {message}!"
+                await websocket.send(greeting)
+                print(f"> {greeting}")
+        except KeyboardInterrupt:
+            print("Ending Scipt")
     
         
     
