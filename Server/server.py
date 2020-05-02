@@ -15,7 +15,7 @@ async def hello(websocket, path):
         
     
 
-start_server = websockets.serve(hello, "192.168.178.112", 8001, ping_interval=20)
+start_server = websockets.serve(hello, "192.168.178.112", 8001, ping_interval=None)
 
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
