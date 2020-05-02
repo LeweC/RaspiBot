@@ -1,11 +1,18 @@
 <html>
     <head>
+        <meta charset="utf-8" />
+        
         <script>
+            var foward = "Forward";
+            var right = "Right";
+            var left = "Left";
+            var backwarts = "Backwarts";
+            var stand = "Standing";
             var connection = new WebSocket('ws://192.168.178.112:8001');
             connection.onmessage = function (event) { 
             document.getElementById('result0').value=event.data;
             };
-            //connection.onopen = () => connection.send('hello');
+
             function sendMessage (message){
                 connection.send(message)
             }
@@ -16,7 +23,11 @@
         <p>
             Result: <output type=text id="result0" value="" readonly> </output>
         </p>
-
-        <input type=text onchange="sendMessage(this.value); ">
+        <button onclick="sendMessage(vorwärts);">Vorwärts</button>
+        <button onclick="sendMessage(right);">Right</button>
+        <button onclick="sendMessage(left);">Left</button>
+        <button onclick="sendMessage(backwarts);">Backwarts</button>
+        <button onclick="sendMessage(stand);">Standing</button>
+        <!--<input type=text onchange="sendMessage(this.value); ">-->
     </body>
 </html>
