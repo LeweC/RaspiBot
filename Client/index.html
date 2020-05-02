@@ -8,11 +8,12 @@
             var left = "Left";
             var backwarts = "Backwarts";
             var stand = "Standing";
-            var connection = new WebSocket('ws://192.168.178.112:8001');
+            var connection = new WebSocket('ws://192.168.178.112:8001',ping_interval=20);
+            
             connection.onmessage = function (event) { 
-            document.getElementById('result0').value=event.data;
+                document.getElementById('result0').value=event.data;
             };
-
+            
             function sendMessage (message){
                 connection.send(message)
             }
