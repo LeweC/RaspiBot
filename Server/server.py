@@ -14,7 +14,7 @@ async def hello(websocket, path):
                 print(f"> {greeting}")
     except:
         print('Reconnecting')
-        await websockets.connect("192.168.178.112:8765")
+        await websockets.connect("ws://192.168.178.112:8001")
         
     
 
