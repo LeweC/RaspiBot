@@ -8,10 +8,12 @@ async def hello(websocket, path):
 
             if message == "Standing":
                 greeting = f"{message}!"
+                print(f"> {greeting}")
+                await websocket.send(greeting)
             else:
                 greeting = f"Moving {message}!"
-                await websocket.send(greeting)
                 print(f"> {greeting}")
+                await websocket.send(greeting)
         except KeyboardInterrupt:
             print("Ending Scipt")
     
