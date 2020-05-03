@@ -4,14 +4,11 @@ import time
 import random
 
 def moving(direction):
-    while direction == "Forward":
+    if direction == "Forward":
         move.forward()
-
-    while direction == "Left":
+    elif direction == "Left":
         move.left()    
-
-    while direction == "Right":
+    elif direction == "Right":
         move.right()
-
-    while direction == "Standing":
+    elif direction == "Standing":
         move.stand()    
