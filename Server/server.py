@@ -23,10 +23,10 @@ async def hello(websocket, path):
     
 start_server = websockets.serve(hello, "192.168.178.112", 8001, ping_interval=None)
 
-#asyncio.get_event_loop().run_until_complete(start_server)
-#asyncio.get_event_loop().run_forever()
+asyncio.get_event_loop().run_until_complete(start_server)
+asyncio.get_event_loop().run_forever()
 
-if True:
+while True:
     print(direction)
     main.moving(direction)
     
