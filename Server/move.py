@@ -2,6 +2,8 @@
 # File name   : move.py
 # Description : Controlling all servos
 # Date      : 2019/04/08
+import ultrasonic
+import random
 import time
 import Adafruit_PCA9685
 from mpu6050 import mpu6050
@@ -564,6 +566,88 @@ def stand():
     pwm.set_pwm(10, 0, 300)
     pwm.set_pwm(11, 0, 300)
 
+def autonom():
+    step = 1
+    init_all()
+    try:
+        while 1:
+            result = ultrasonic.measure()
+            while result[0] >= 15:
+                print("forward")
+                print(step)
+                print(result[0])
+                print(result[1])
+                print("------")        
+                move(step, 35, 'no')
+                step += 1
+                if step == 5:
+                  step = 1
+                result = ultrasonic.measure()
+                time.sleep(0.6)
+            else:
+                print("turn")
+                print(step)
+                print(result[0])
+                print(result[1])
+                print("------")
+
+                stand()
+                time.sleep(1)
+
+                sensor_right()
+                time.sleep(2)
+
+                sensor_left()
+                time.sleep(2)
+
+                sensor_middle()
+                time.sleep(2)
+
+                drehung = random.randint(10,20)
+                for x in range(drehung):
+                    print("Drehen",x)
+                    move(step, 35, 'left')
+                    step += 1
+                    if step == 5:
+                        step = 1
+                    time.sleep(0.6)    
+                result = ultrasonic.measure()
+                time.sleep(0.6)
+
+    except KeyboardInterrupt:
+        print("Ending Scipt")
+        ultrasonic.closing()
+        time.sleep(1)
+
+def right():
+    step = 1
+    init_all()
+    if True:
+        move(step, 35, 'right')
+        step += 1
+        if step == 5:
+            step = 1
+        time.sleep(0.6)
+
+def left():
+    step = 1
+    init_all()
+    if True:
+        move(step, 35, 'left')
+        step += 1
+        if step == 5:
+            step = 1
+        time.sleep(0.6)
+
+def forward():
+    step = 1
+    init_all()
+    if True:
+        move(step, 35, 'no')
+        step += 1
+        if step == 5:
+            step = 1
+        time.sleep(0.6)
 
 def sensor_right():
     pwm.set_pwm(12,0,100)
@@ -577,11 +661,8 @@ def sensor_middle():
 def release():
     pwm.set_all_pwm(0, 0)
 
-
-
 def clean_all():
     pwm.set_all_pwm(0, 0)
-
 
 def destroy():
     clean_all()
