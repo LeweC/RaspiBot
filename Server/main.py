@@ -4,6 +4,7 @@ import time
 import random
 
 def moving(direction):
+    print("moving wurde ausgeführt")
     if direction == "Forward":
         move.forward()
     elif direction == "Left":
