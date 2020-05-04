@@ -1,13 +1,13 @@
 import asyncio
 import websockets
 import main
-direction = ""
+#direction = ""
 
 async def hello(websocket, path):
     try:
         async for message in websocket:
-            global direction
-            direction = message
+            #global direction
+            #direction = message
             print(f"< {message}")
             if message == "Standing":
                 greeting = f"{message}!"
@@ -19,9 +19,9 @@ async def hello(websocket, path):
                 print(f"> {greeting}")
                 await websocket.send(greeting)
 
-        if direction != "":
-            print(direction)
-        main.moving(direction)
+        #if direction != "":
+        #    print(direction)
+        main.moving(message)
 
     except KeyboardInterrupt:
         print("Ending Scipt")    
