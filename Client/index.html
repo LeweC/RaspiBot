@@ -18,16 +18,17 @@
                 connection.send(message)
             }
         </script>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
     </head>
 
     <body>
-        <p>
+        <p class="output">
             Result: <output type=text id="result0" value="" readonly> </output>
         </p>
-        <button onclick="sendMessage(foward);">Vorwärts</button>
-        <button onclick="sendMessage(right);">Right</button>
-        <button onclick="sendMessage(left);">Left</button>
-        <button onclick="sendMessage(backwarts);">Backwarts</button>
-        <button onclick="sendMessage(stand);">Standing</button>
+        <button class="buttonTop" onclick="sendMessage(foward);">Vorwärts</button>
+        <button class="buttonRight" onclick="sendMessage(right);">Right</button>
+        <button class="buttonLeft" onclick="sendMessage(left);">Left</button>
+        <button class="buttonBot" onclick="sendMessage(backwarts);">Backwarts</button>
+        <button class="buttonMiddle" onclick="sendMessage(stand);">Standing</button>
     </body>
 </html>
