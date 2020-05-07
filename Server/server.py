@@ -9,5 +9,6 @@ while True:
     clientsocket, address = s.accept()
     print(f"Connection from {address} has been established.")
     clientsocket.send(bytes(f"Connection from has been established.","utf-8"))
-    msg = s.recv(1024)
-    clientsocket.send(bytes(msg,"utf-8"))
+    while True:
+        msg = s.recv(1024)
+        clientsocket.send(bytes(msg,"utf-8"))
