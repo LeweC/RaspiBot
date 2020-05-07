@@ -12,4 +12,4 @@ while True:
     while True:
         msg = s.accept()
         print(msg)
-        clientsocket.send(bytes(msg,"utf-8"))
+        clientsocket.send(str(msg,"utf-8"))
