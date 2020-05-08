@@ -22,7 +22,7 @@ async def getMessage(websocket, path):
             print("Ending Scipt")
 
 async def eventhandler(direction):
-    print("Wurde ausgeführt")
+    #print("Wurde ausgeführt")
     main.moving(direction)    
 
 async def mainloop():
