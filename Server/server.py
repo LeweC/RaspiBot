@@ -27,7 +27,7 @@ async def eventhandler(direction):
 
 async def mainloop():
     while True:
-        await getMessage
+        #await getMessage
         await eventhandler(direction)
 
 start_server = websockets.serve(getMessage, "192.168.178.112", 8001, ping_interval=None)
