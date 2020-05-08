@@ -31,8 +31,7 @@ async def mainloop():
         await eventhandler(direction)
 
 start_server = websockets.serve(getMessage, "192.168.178.112", 8001, ping_interval=None)
-asyncio.get_event_loop().run_until_complete(start_server)
 
-loop = asyncio.get_event_loop()
+loop = asyncio.get_event_loop().run_until_complete(start_server)
 loop.create_task(mainloop())
 loop.run_forever()
