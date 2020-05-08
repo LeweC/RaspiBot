@@ -22,8 +22,7 @@ async def hello(websocket, path):
             print("Ending Scipt")
 
 async def eventhandler(direction):
-    if direction != "":
-        print(direction)
+    print("Wurde ausgeführt")
     main.moving(direction)    
     
 start_server = websockets.serve(hello, "192.168.178.112", 8001, ping_interval=None)
