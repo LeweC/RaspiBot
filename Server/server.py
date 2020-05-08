@@ -1,15 +1,32 @@
+import asyncio
+import websockets
 import main
-import socket
+direction = ""
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind(("192.168.178.112", 8001))
-s.listen(10)
+async def hello(websocket, path):
+    async for message in websocket:
+        try:
+            global direction
+            direction = message
+            print(f"< {message}")
+            if message == "Standing":
+                greeting = f"{message}!"
+                print(f"> {greeting}")
+                
+                await websocket.send(greeting)
+            else:
+                greeting = f"Moving {message}!"
+                print(f"> {greeting}")
+                await websocket.send(greeting)
+        except KeyboardInterrupt:
+            print("Ending Scipt")
 
-while True:
-    clientsocket, address = s.accept()
-    print(f"Connection from {address} has been established.")
-    clientsocket.send(bytes(f"Connection from has been established.","utf-8"))
-    while True:
-        msg = s.accept()
-        print(msg)
-        clientsocket.send(msg,"utf-8")
+async def eventhandler(direction):
+    if direction != "":
+        print(direction)
+    main.moving(direction)    
+    
+start_server = websockets.serve(hello, "192.168.178.112", 8001, ping_interval=None)
+
+asyncio.get_event_loop().run_until_complete(start_server)
+hello, eventhandler = asyncio.get_event_loop().run_forever()
