@@ -21,9 +21,9 @@ async def getMessage(websocket, path):
         except KeyboardInterrupt:
             print("Ending Scipt")
 
-async def eventhandler(direction):
+async def eventhandler(event):
     #print("Wurde ausgeführt")
-    main.moving(direction)    
+    main.moving(event)    
 
 async def mainloop():
     while True:
@@ -32,7 +32,4 @@ async def mainloop():
 
 start_server = websockets.serve(getMessage, "192.168.178.112", 8001, ping_interval=None)
 asyncio.get_event_loop().run_until_complete(start_server)
-
-loop = asyncio.get_event_loop()
-loop.create_task(mainloop())
-loop.run_forever()
+asyncio.get_event_loop().run_forever()

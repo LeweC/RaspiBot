@@ -1,0 +1,10 @@
+C:\Users\lewe2\source\repos\ServerRaspiBot\bin\Debug\ServerRaspiBot.exe.config
+C:\Users\lewe2\source\repos\ServerRaspiBot\bin\Debug\ServerRaspiBot.exe.manifest
+C:\Users\lewe2\source\repos\ServerRaspiBot\bin\Debug\ServerRaspiBot.application
+C:\Users\lewe2\source\repos\ServerRaspiBot\bin\Debug\ServerRaspiBot.exe
+C:\Users\lewe2\source\repos\ServerRaspiBot\bin\Debug\ServerRaspiBot.pdb
+C:\Users\lewe2\source\repos\ServerRaspiBot\obj\Debug\ServerRaspiBot.csprojAssemblyReference.cache
+C:\Users\lewe2\source\repos\ServerRaspiBot\obj\Debug\ServerRaspiBot.exe.manifest
+C:\Users\lewe2\source\repos\ServerRaspiBot\obj\Debug\ServerRaspiBot.application
+C:\Users\lewe2\source\repos\ServerRaspiBot\obj\Debug\ServerRaspiBot.exe
+C:\Users\lewe2\source\repos\ServerRaspiBot\obj\Debug\ServerRaspiBot.pdb
