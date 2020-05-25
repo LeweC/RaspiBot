@@ -12,6 +12,7 @@ from mpu6050 import mpu6050
 change this variables to 0 to reverse all the servos.
 '''
 set_direction = 1
+step = 1
 
 '''
 change these two variables to reverse the direction of the legs.
@@ -620,8 +621,8 @@ def autonom():
         time.sleep(1)
 
 def right():
-    step = 1
-    init_all()
+    global step
+    step += 1
     if True:
         move(step, 35, 'right')
         step += 1
@@ -630,8 +631,8 @@ def right():
         time.sleep(0.6)
 
 def left():
-    step = 1
-    init_all()
+    global step
+    step += 1
     if True:
         move(step, 35, 'left')
         step += 1
@@ -640,8 +641,8 @@ def left():
         time.sleep(0.6)
 
 def forward():
-    step = 1
-    init_all()
+    global step
+    step += 1
     if True:
         move(step, 35, 'no')
         step += 1
