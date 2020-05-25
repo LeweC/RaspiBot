@@ -2,6 +2,7 @@ import asyncio
 import websockets
 import main
 direction = ""
+counter = 0
 async def hello(websocket, path):
     async for message in websocket:
         try:
@@ -23,6 +24,9 @@ async def hello(websocket, path):
 start_server = websockets.serve(hello, "192.168.178.36", 8001, ping_interval=None)
 
 while True:
+    counter = counter + 1
+    if counter % 10 == 0:
+        print(direction)
     main.moving(direction)
 
 
