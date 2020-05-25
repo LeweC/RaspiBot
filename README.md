@@ -2,7 +2,7 @@
 Hexapod robot controlled by a Raspberry Pi and written in Python.
 
 Controlled by a C# WindowsForm
-Controlled by a website with live camera stream.
+soon with a live camera stream.
 
 
 # More Coming Soon
