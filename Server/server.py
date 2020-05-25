@@ -29,7 +29,7 @@ def test():
     while True:
         print("---" + direction)
         main.moving(direction)
-        yield from asyncio.sleep(1)
+        yield from asyncio.sleep(0.5)
 
 start_server = websockets.serve(hello, "192.168.178.36", 8001, ping_interval=None)
 asyncio.get_event_loop().run_until_complete(start_server)
