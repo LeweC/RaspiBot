@@ -19,7 +19,7 @@ async def hello(websocket, path):
         except KeyboardInterrupt:
             print("Ending Scipt")
     
-start_server = websockets.serve(hello, "192.168.178.31", 8001, ping_interval=None)
+start_server = websockets.serve(hello, "192.168.178.36", 8001, ping_interval=None)
 
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
