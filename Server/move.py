@@ -622,7 +622,7 @@ def autonom():
 
 def right():
     global step
-    step += 1
+    # step += 1
     if True:
         move(step, 35, 'right')
         step += 1
@@ -632,7 +632,7 @@ def right():
 
 def left():
     global step
-    step += 1
+    # step += 1
     if True:
         move(step, 35, 'left')
         step += 1
@@ -642,7 +642,7 @@ def left():
 
 def forward():
     global step
-    step += 1
+    # step += 1
     if True:
         move(step, 35, 'no')
         step += 1
