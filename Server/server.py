@@ -3,6 +3,7 @@ import websockets
 import main
 direction = ""
 counter = 0
+
 @asyncio.coroutine
 async def hello(websocket, path):
     async for message in websocket:

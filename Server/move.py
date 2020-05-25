@@ -572,7 +572,7 @@ def autonom():
     try:
         global step
         result = ultrasonic.measure()
-        while result[0] >= 15:
+        if result[0] >= 15:
             print("forward")
             print(step)
             print(result[0])
