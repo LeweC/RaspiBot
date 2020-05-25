@@ -127,7 +127,7 @@ for i in range(0, 16):
 
 def init_all():
     pwm.set_all_pwm(0, 300)
-    pwm.set_pwm(12,0,300)
+    pwm.set_pwm(12, 0, 300)
 
 
 def ctrl_range(raw, max_genout, min_genout):
@@ -567,58 +567,58 @@ def stand():
     pwm.set_pwm(10, 0, 300)
     pwm.set_pwm(11, 0, 300)
 
+
 def autonom():
-    step = 1
-    init_all()
     try:
-        while 1:
+        global step
+        result = ultrasonic.measure()
+        while result[0] >= 15:
+            print("forward")
+            print(step)
+            print(result[0])
+            print(result[1])
+            print("------")
+            move(step, 35, 'no')
+            step += 1
+            if step == 5:
+                step = 1
             result = ultrasonic.measure()
-            while result[0] >= 15:
-                print("forward")
-                print(step)
-                print(result[0])
-                print(result[1])
-                print("------")        
-                move(step, 35, 'no')
+            time.sleep(0.6)
+        else:
+            print("turn")
+            print(step)
+            print(result[0])
+            print(result[1])
+            print("------")
+
+            stand()
+            time.sleep(1)
+
+            sensor_right()
+            time.sleep(2)
+
+            sensor_left()
+            time.sleep(2)
+
+            sensor_middle()
+            time.sleep(2)
+
+            drehung = random.randint(10, 20)
+            for x in range(drehung):
+                print("Drehen", x)
+                move(step, 35, 'left')
                 step += 1
                 if step == 5:
-                  step = 1
-                result = ultrasonic.measure()
-                time.sleep(0.6)
-            else:
-                print("turn")
-                print(step)
-                print(result[0])
-                print(result[1])
-                print("------")
-
-                stand()
-                time.sleep(1)
-
-                sensor_right()
-                time.sleep(2)
-
-                sensor_left()
-                time.sleep(2)
-
-                sensor_middle()
-                time.sleep(2)
-
-                drehung = random.randint(10,20)
-                for x in range(drehung):
-                    print("Drehen",x)
-                    move(step, 35, 'left')
-                    step += 1
-                    if step == 5:
-                        step = 1
-                    time.sleep(0.3)    
-                result = ultrasonic.measure()
-                time.sleep(0.4)
+                    step = 1
+                time.sleep(0.3)
+            result = ultrasonic.measure()
+            time.sleep(0.4)
 
     except KeyboardInterrupt:
         print("Ending Scipt")
         ultrasonic.closing()
         time.sleep(1)
+
 
 def right():
     global step
@@ -630,6 +630,7 @@ def right():
             step = 1
         time.sleep(0.3)
 
+
 def left():
     global step
     # step += 1
@@ -639,6 +640,7 @@ def left():
         if step == 5:
             step = 1
         time.sleep(0.3)
+
 
 def forward():
     global step
@@ -650,20 +652,26 @@ def forward():
             step = 1
         time.sleep(0.3)
 
+
 def sensor_right():
-    pwm.set_pwm(12,0,100)
+    pwm.set_pwm(12, 0, 100)
+
 
 def sensor_left():
-    pwm.set_pwm(12,0,500)
+    pwm.set_pwm(12, 0, 500)
+
 
 def sensor_middle():
-    pwm.set_pwm(12,0,300)
+    pwm.set_pwm(12, 0, 300)
+
 
 def release():
     pwm.set_all_pwm(0, 0)
 
+
 def clean_all():
     pwm.set_all_pwm(0, 0)
+
 
 def destroy():
     clean_all()

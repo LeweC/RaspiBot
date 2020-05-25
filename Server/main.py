@@ -4,7 +4,6 @@ import time
 import random
 
 def moving(direction):
-    #print("moving wurde ausgeführt")
     if direction == "Forward":
         move.forward()
     elif direction == "Left":
@@ -12,4 +11,6 @@ def moving(direction):
     elif direction == "Right":
         move.right()
     elif direction == "Standing":
-        move.stand()    
+        move.stand()
+    elif direction == "Auto":
+        move.autonom()    
