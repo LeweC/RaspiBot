@@ -26,7 +26,7 @@ async def hello(websocket, path):
 
 
 @asyncio.coroutine
-def test():
+def mainloop():
     while True:
         print("---" + direction)
         main.moving(direction)
@@ -34,5 +34,5 @@ def test():
 
 start_server = websockets.serve(hello, "192.168.178.36", 8001, ping_interval=None)
 asyncio.get_event_loop().run_until_complete(start_server)
-asyncio.ensure_future(test())
+asyncio.ensure_future(mainloop())
 asyncio.get_event_loop().run_forever()
