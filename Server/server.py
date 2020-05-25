@@ -25,7 +25,7 @@ start_server = websockets.serve(hello, "192.168.178.36", 8001, ping_interval=Non
 
 while True:
     counter = counter + 1
-    if counter % 10 == 0:
+    if counter % 10 == 0 & direction != "":
         print(direction)
     main.moving(direction)
 
