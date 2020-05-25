@@ -611,7 +611,7 @@ def autonom():
                     step += 1
                     if step == 5:
                         step = 1
-                    time.sleep(0.6)    
+                    time.sleep(0.3)    
                 result = ultrasonic.measure()
                 time.sleep(0.4)
 
@@ -628,7 +628,7 @@ def right():
         step += 1
         if step == 5:
             step = 1
-        time.sleep(0.4)
+        time.sleep(0.3)
 
 def left():
     global step
@@ -638,7 +638,7 @@ def left():
         step += 1
         if step == 5:
             step = 1
-        time.sleep(0.4)
+        time.sleep(0.3)
 
 def forward():
     global step
@@ -648,7 +648,7 @@ def forward():
         step += 1
         if step == 5:
             step = 1
-        time.sleep(0.4)
+        time.sleep(0.3)
 
 def sensor_right():
     pwm.set_pwm(12,0,100)
