@@ -40,6 +40,7 @@ def measure():
 
     print("Distance: %.1f cm" % distance)
     time.sleep(0.001)
+    GPIO.cleanup()
     return distance, time_elapsed
 
 def closing():
