@@ -3,6 +3,7 @@ import websockets
 import main
 direction = ""
 counter = 0
+@asyncio.coroutine
 async def hello(websocket, path):
     async for message in websocket:
         try:
@@ -21,14 +22,16 @@ async def hello(websocket, path):
         except KeyboardInterrupt:
             print("Ending Scipt")
     
+
+
+@asyncio.coroutine
+def test():
+    while True:
+        print("---" + direction)
+        main.moving(direction)
+        yield from asyncio.sleep(1)
+
 start_server = websockets.serve(hello, "192.168.178.36", 8001, ping_interval=None)
-
-while True:
-    counter = counter + 1
-    if counter % 10 == 0 & direction != "":
-        print(direction)
-    main.moving(direction)
-
-
-#asyncio.get_event_loop().run_until_complete(start_server)
-#asyncio.get_event_loop().run_forever()
+asyncio.get_event_loop().run_until_complete(start_server)
+asyncio.ensure_future(test())
+asyncio.get_event_loop().run_forever()
