@@ -45,4 +45,3 @@ def measure():
 def closing():
     move.init_all()
     GPIO.output(pinTrigger, False)
-    GPIO.cleanup()
