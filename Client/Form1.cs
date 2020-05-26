@@ -32,7 +32,7 @@ namespace RaspiBot
 
         private void webSocket(string test)
         {
-            using (var ws = new WebSocket("ws://192.168.178.36:8001"))
+            using (var ws = new WebSocket("ws://31.16.67.247:8001"))
             {
                 ws.OnOpen += (sender, e) => {
                     lbl_connection.Text = "Connected to RaspiBot";
