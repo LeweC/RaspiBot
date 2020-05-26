@@ -8,3 +8,13 @@ C:\Users\lewe2\source\repos\RaspiBot\bin\Debug\RaspiBot.pdb
 C:\Users\lewe2\source\repos\RaspiBot\obj\Debug\RaspiBot.csproj.CopyComplete
 C:\Users\lewe2\source\repos\RaspiBot\obj\Debug\RaspiBot.exe
 C:\Users\lewe2\source\repos\RaspiBot\obj\Debug\RaspiBot.pdb
+C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\RaspiBot.exe.config
+C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\RaspiBot.exe
+C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\RaspiBot.pdb
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.csprojAssemblyReference.cache
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.Form1.resources
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.Properties.Resources.resources
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.csproj.GenerateResource.cache
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.csproj.CopyComplete
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.exe
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.pdb
