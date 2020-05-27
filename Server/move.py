@@ -654,15 +654,15 @@ def forward():
 
 
 def sensor_right():
-    pwm.set_pwm(12, 0, 100)
+    pwm.set_pwm(14, 0, 100)
 
 
 def sensor_left():
-    pwm.set_pwm(12, 0, 500)
+    pwm.set_pwm(14, 0, 500)
 
 
 def sensor_middle():
-    pwm.set_pwm(12, 0, 300)
+    pwm.set_pwm(14, 0, 300)
 
 
 def release():
