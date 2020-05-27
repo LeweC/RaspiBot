@@ -15,7 +15,7 @@ namespace RaspiBot
     {
         string direction = "empty";
         string moved = "start";
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace RaspiBot
             {
                 webSocket(direction);
             }
-                
+
         }
 
         private void webSocket(string test)
@@ -36,6 +36,7 @@ namespace RaspiBot
             {
                 ws.OnOpen += (sender, e) => {
                     lbl_connection.Text = "Connected to RaspiBot";
+                    lbl_connection.ForeColor = Color.LightGreen;
                 };
                 ws.Connect();
                 ws.Send(test);
@@ -73,12 +74,96 @@ namespace RaspiBot
         private void btn_backwards_Click(object sender, EventArgs e)
         {
             direction = "Backwards";
-            
+
         }
 
         private void btn_auto_Click(object sender, EventArgs e)
         {
-            direction = "Auto";
+            if (btn_auto.Text == "Enable Auto")
+            {
+                btn_auto.Text = "Disable Auto";
+                btn_forward.Enabled = false;
+                btn_left.Enabled = false;
+                btn_right.Enabled = false;
+                btn_backwards.Enabled = false;
+                btn_stand.Enabled = false;
+                direction = "Auto";
+            }
+            else
+            {
+                btn_auto.Text = "Enable Auto";
+                if (btn_arrow.Text == "Arrow control")
+                {
+                    btn_forward.Enabled = true;
+                    btn_left.Enabled = true;
+                    btn_right.Enabled = true;
+                    btn_backwards.Enabled = true;
+                    btn_stand.Enabled = true;
+                }
+                
+                direction = "Standing";
+                btn_arrow.Focus();
+            }
+            
+        }
+
+        private void btn_arrow_Click(object sender, EventArgs e)
+        {
+            if (btn_arrow.Text == "Arrow control")
+            {
+                btn_arrow.Text = "Button control";
+                btn_forward.Enabled = false;
+                btn_left.Enabled = false;
+                btn_right.Enabled = false;
+                btn_backwards.Enabled = false;
+                btn_stand.Enabled = false;
+            }
+            else
+            {
+                btn_arrow.Text = "Arrow control";
+                btn_forward.Enabled = true;
+                btn_left.Enabled = true;
+                btn_right.Enabled = true;
+                btn_backwards.Enabled = true;
+                btn_stand.Enabled = true;
+            }
+        }
+
+        private void btn_arrow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (btn_arrow.Text == "Button control")
+            {
+                if (e.KeyCode == Keys.W)
+                {
+                    direction = "Forward";
+                }
+
+                if (e.KeyCode == Keys.S)
+                {
+                    direction = "Backward";
+                }
+
+                if (e.KeyCode == Keys.A)
+                {
+                    direction = "Left";
+                }
+
+                if (e.KeyCode == Keys.D)
+                {
+                    direction = "Right";
+                }
+
+                if (e.KeyCode == Keys.X)
+                {
+                    direction = "Standing";
+                }
+            }
+            
+        }
+
+        private void btn_camera_Click(object sender, EventArgs e)
+        {
+            btn_arrow.Focus();
         }
     }
 }

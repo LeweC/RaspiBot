@@ -102,38 +102,41 @@
             // 
             this.lbl_connection.AutoSize = true;
             this.lbl_connection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_connection.ForeColor = System.Drawing.Color.Green;
+            this.lbl_connection.ForeColor = System.Drawing.Color.Red;
             this.lbl_connection.Location = new System.Drawing.Point(86, 28);
             this.lbl_connection.Name = "lbl_connection";
-            this.lbl_connection.Size = new System.Drawing.Size(51, 20);
+            this.lbl_connection.Size = new System.Drawing.Size(114, 20);
             this.lbl_connection.TabIndex = 5;
-            this.lbl_connection.Text = "label1";
+            this.lbl_connection.Text = "No Connection";
             // 
             // btn_arrow
             // 
             this.btn_arrow.Location = new System.Drawing.Point(12, 295);
             this.btn_arrow.Name = "btn_arrow";
-            this.btn_arrow.Size = new System.Drawing.Size(78, 23);
+            this.btn_arrow.Size = new System.Drawing.Size(93, 23);
             this.btn_arrow.TabIndex = 6;
             this.btn_arrow.Text = "Arrow control";
             this.btn_arrow.UseVisualStyleBackColor = true;
+            this.btn_arrow.Click += new System.EventHandler(this.btn_arrow_Click);
+            this.btn_arrow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_arrow_KeyDown);
             // 
             // btn_camera
             // 
-            this.btn_camera.Location = new System.Drawing.Point(96, 295);
+            this.btn_camera.Location = new System.Drawing.Point(111, 295);
             this.btn_camera.Name = "btn_camera";
             this.btn_camera.Size = new System.Drawing.Size(75, 23);
             this.btn_camera.TabIndex = 7;
             this.btn_camera.Text = "Camera";
             this.btn_camera.UseVisualStyleBackColor = true;
+            this.btn_camera.Click += new System.EventHandler(this.btn_camera_Click);
             // 
             // btn_auto
             // 
-            this.btn_auto.Location = new System.Drawing.Point(177, 295);
+            this.btn_auto.Location = new System.Drawing.Point(192, 295);
             this.btn_auto.Name = "btn_auto";
-            this.btn_auto.Size = new System.Drawing.Size(75, 23);
+            this.btn_auto.Size = new System.Drawing.Size(83, 23);
             this.btn_auto.TabIndex = 8;
-            this.btn_auto.Text = "Auto";
+            this.btn_auto.Text = "Enable Auto";
             this.btn_auto.UseVisualStyleBackColor = true;
             this.btn_auto.Click += new System.EventHandler(this.btn_auto_Click);
             // 
