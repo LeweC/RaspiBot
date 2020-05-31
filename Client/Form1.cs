@@ -15,7 +15,6 @@ namespace RaspiBot
     {
         string direction = "empty";
         string moved = "start";
-        //test
 
         public Form1()
         {
@@ -33,23 +32,17 @@ namespace RaspiBot
 
         private void webSocket(string test)
         {
-            try
+            using (var ws = new WebSocket("ws://31.16.67.247:80"))
             {
-                using (var ws = new WebSocket("ws://31.16.67.247:80"))
+                ws.OnOpen += (sender, e) =>
                 {
-                    ws.OnOpen += (sender, e) =>
-                    {
-                        lbl_connection.Text = "Connected to RaspiBot";
-                        lbl_connection.ForeColor = Color.LightGreen;
-                    };
-                    ws.Connect();
-                    ws.Send(test);
-                    //ws.Close();
-                    moved = test;
-                }
-            }
-            catch
-            {
+                lbl_connection.Text = "Connected to RaspiBot";
+                lbl_connection.ForeColor = Color.LightGreen;
+                };
+             ws.Connect();
+             ws.Send(test);
+             //ws.Close();
+             moved = test;
             }
         }
 
