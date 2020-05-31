@@ -18,3 +18,7 @@ C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.csproj.GenerateResourc
 C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.csproj.CopyComplete
 C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.exe
 C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.pdb
+C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\RaspiBot.exe.manifest
+C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\RaspiBot.application
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.exe.manifest
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.application
