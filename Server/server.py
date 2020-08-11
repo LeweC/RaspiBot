@@ -6,39 +6,17 @@ handler = None
 direction = ""
 counter = 0
 stream = False
+instructions = ["empty", "empty", "off"]
 
 @asyncio.coroutine
 async def hello(websocket, path):
     async for message in websocket:
         try:
             print(f"< {message}")
-            global direction 
-            if message == "Standing":
-                greeting = f"{message}!"
-                print(f"> {greeting}")
-                direction = message
-                await websocket.send(greeting)
-
-            elif message == "CameraStart":
-                stream = True
-                greeting = f"{message}!"
-                print(f"> {greeting}")
-                direction = message
-                await websocket.send(greeting)
-
-            elif message == "CameraStop":
-                stream = False
-                greeting = f"{message}!"
-                print(f"> {greeting}")
-                direction = message
-                await websocket.send(greeting) 
-                  
-
-            else:
-                greeting = f"Moving {message}!"
-                print(f"> {greeting}")
-                direction = message
-                await websocket.send(greeting)
+            global instructions 
+            if counter == 3:
+                counter = 0
+            instructions[counter] = message
         except KeyboardInterrupt:
             print("Ending Scipt")
     
@@ -47,8 +25,7 @@ async def hello(websocket, path):
 @asyncio.coroutine
 def mainloop():
     while True:
-        print("---" + direction)
-        main.moving(direction)
+        main.handler(instructions)
         yield from asyncio.sleep(0.2)
 
 start_server = websockets.serve(hello, handler, 80, ping_interval=None)

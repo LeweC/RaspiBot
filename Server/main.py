@@ -3,14 +3,19 @@ import ultrasonic
 import time
 import random
 
-def moving(direction):
-    if direction == "Forward":
+def handler(instructions):
+    directions
+       
+
+
+def directions(instructions): 
+    if instructions == "Forward":
         move.forward()
-    elif direction == "Left":
+    elif instructions[0] == "Left":
         move.left()    
-    elif direction == "Right":
+    elif instructions[0] == "Right":
         move.right()
-    elif direction == "Standing":
+    elif instructions[0] == "Standing":
         move.stand()
-    elif direction == "Auto":
-        move.autonom()    
+    elif instructions[0] == "Auto":
+        move.autonom()
