@@ -18,6 +18,7 @@ async def hello(websocket, path):
             if counter == 3:
                 counter = 0
             instructions[counter] = message
+            counter = counter + 1
         except KeyboardInterrupt:
             print("Ending Scipt")
     
