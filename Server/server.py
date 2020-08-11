@@ -21,9 +21,18 @@ async def hello(websocket, path):
 
             elif message == "CameraStart":
                 stream = True
+                greeting = f"{message}!"
+                print(f"> {greeting}")
+                direction = message
+                await websocket.send(greeting)
 
             elif message == "CameraStop":
-                stream = False    
+                stream = False
+                greeting = f"{message}!"
+                print(f"> {greeting}")
+                direction = message
+                await websocket.send(greeting) 
+                  
 
             else:
                 greeting = f"Moving {message}!"

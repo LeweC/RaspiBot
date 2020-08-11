@@ -1,4 +1,4 @@
-import io
+'''import io
 import socket
 import struct
 import time
@@ -43,3 +43,4 @@ try:
 finally:
     connection.close()
     client_socket.close()
+'''
