@@ -4,6 +4,7 @@ import time
 import random
 
 def handler(instructions):
+    print("arrived")
     if instructions[0] == "Forward":
         move.forward()
     elif instructions[0] == "Left":
