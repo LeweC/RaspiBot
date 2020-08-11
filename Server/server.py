@@ -13,7 +13,8 @@ async def hello(websocket, path):
     async for message in websocket:
         try:
             print(f"< {message}")
-            global instructions 
+            global instructions
+            global counter 
             if counter == 3:
                 counter = 0
             instructions[counter] = message
