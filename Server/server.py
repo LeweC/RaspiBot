@@ -1,9 +1,11 @@
 import asyncio
 import websockets
 import main
+import camera
 handler = None
 direction = ""
 counter = 0
+stream = False
 
 @asyncio.coroutine
 async def hello(websocket, path):
@@ -16,6 +18,13 @@ async def hello(websocket, path):
                 print(f"> {greeting}")
                 direction = message
                 await websocket.send(greeting)
+
+            elif message == "CameraStart":
+                stream = True
+
+            elif message == "CameraStop":
+                stream = False    
+
             else:
                 greeting = f"Moving {message}!"
                 print(f"> {greeting}")
