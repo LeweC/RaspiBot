@@ -14,7 +14,9 @@ namespace RaspiBot
     public partial class Form1 : Form
     {
         string direction = "empty";
-        string moved = "start";
+        string USS = "empty";
+        string camera = "off";
+        string[] moved = new string[3];
 
         public Form1()
         {
@@ -23,14 +25,14 @@ namespace RaspiBot
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (direction != moved || direction == "empty")
+            if (moved[0] != direction || direction == "empty" || moved[1] != USS || moved[2] != camera)
             {
-                webSocket(direction);
+                webSocket(direction, USS, camera);
             }
 
         }
 
-        private void webSocket(string test)
+        private void webSocket(string direction, string USS, string camera)
         {
             using (var ws = new WebSocket("ws://31.16.67.247:80"))
             {
@@ -39,17 +41,21 @@ namespace RaspiBot
                 lbl_connection.Text = "Connected to RaspiBot";
                 lbl_connection.ForeColor = Color.LightGreen;
                 };
-             ws.Connect();
-             ws.Send(test);
-             //ws.Close();
-             moved = test;
+                ws.Connect();
+                ws.Send(direction);
+                ws.Send(USS);
+                ws.Send(camera);
+                //ws.Close();
+                moved[0] = direction;
+                moved[1] = USS;
+                moved[2] = camera;
             }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             direction = "Standing";
-            webSocket(direction);
+            webSocket(direction, USS, camera);
         }
 
         private void btn_forward_Click(object sender, EventArgs e)
