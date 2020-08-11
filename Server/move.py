@@ -583,7 +583,7 @@ def autonom():
             if step == 5:
                 step = 1
             result = ultrasonic.measure()
-            time.sleep(0.4)
+            time.sleep(0.2)
         else:
             print("turn")
             print(step)
