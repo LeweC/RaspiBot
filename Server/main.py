@@ -9,7 +9,7 @@ def handler(instructions):
 
 
 def directions(instructions): 
-    if instructions == "Forward":
+    if instructions[0] == "Forward":
         move.forward()
     elif instructions[0] == "Left":
         move.left()    
