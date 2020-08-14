@@ -34,7 +34,7 @@ namespace RaspiBot
 
         private void webSocket(string direction, string USS, string camera)
         {
-            using (var ws = new WebSocket("ws://31.16.67.247:80"))
+            using (var ws = new WebSocket("ws://31.16.67.247:8080"))
             {
                 ws.OnOpen += (sender, e) =>
                 {

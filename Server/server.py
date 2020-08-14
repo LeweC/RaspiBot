@@ -31,7 +31,7 @@ def mainloop():
         main.handler(instructions)
         yield from asyncio.sleep(0.2)
 
-start_server = websockets.serve(hello, handler, 80, ping_interval=None)
+start_server = websockets.serve(hello, handler, 8080, ping_interval=None)
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.ensure_future(mainloop())
 asyncio.get_event_loop().run_forever()
