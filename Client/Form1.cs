@@ -170,6 +170,16 @@ namespace RaspiBot
 
         private void btn_camera_Click(object sender, EventArgs e)
         {
+            if (btn_camera.Text == "Enable Camera")
+            {
+                btn_camera.Text = "Disable Camera";
+                cameraForm cameraForm = new cameraForm();
+                cameraForm.Show();
+            }
+            else
+            {
+                btn_camera.Text = "Enable Camera";
+            }
             btn_arrow.Focus();
         }
     }
