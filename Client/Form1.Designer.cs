@@ -126,15 +126,15 @@
             // 
             this.btn_camera.Location = new System.Drawing.Point(120, 217);
             this.btn_camera.Name = "btn_camera";
-            this.btn_camera.Size = new System.Drawing.Size(75, 23);
+            this.btn_camera.Size = new System.Drawing.Size(100, 23);
             this.btn_camera.TabIndex = 7;
-            this.btn_camera.Text = "Camera";
+            this.btn_camera.Text = "Enable Camera";
             this.btn_camera.UseVisualStyleBackColor = true;
             this.btn_camera.Click += new System.EventHandler(this.btn_camera_Click);
             // 
             // btn_auto
             // 
-            this.btn_auto.Location = new System.Drawing.Point(201, 217);
+            this.btn_auto.Location = new System.Drawing.Point(226, 217);
             this.btn_auto.Name = "btn_auto";
             this.btn_auto.Size = new System.Drawing.Size(83, 23);
             this.btn_auto.TabIndex = 8;

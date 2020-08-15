@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CefSharp;
+using CefSharp.WinForms;
 
 namespace RaspiBot
 {
@@ -15,6 +17,20 @@ namespace RaspiBot
         public cameraForm()
         {
             InitializeComponent();
+        }
+
+        public ChromiumWebBrowser browser;
+
+        private void cameraForm_Load(object sender, EventArgs e)
+        {
+            browser = new ChromiumWebBrowser("http://31.19.63.145:8081/");
+            this.Controls.Add(browser);
+            browser.Dock = DockStyle.Fill;
+        }
+
+        public void exit()
+        {
+            this.Close();
         }
     }
 }
