@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebSocketSharp;
+using CefSharp;
+using CefSharp.WinForms;
 
 namespace RaspiBot
 {
@@ -34,7 +36,7 @@ namespace RaspiBot
 
         private void webSocket(string direction, string USS, string camera)
         {
-            using (var ws = new WebSocket("ws://31.16.67.247:80"))
+            using (var ws = new WebSocket("ws://31.19.63.145:80"))
             {
                 ws.OnOpen += (sender, e) =>
                 {
@@ -56,6 +58,7 @@ namespace RaspiBot
         {
             direction = "Standing";
             webSocket(direction, USS, camera);
+            Cef.Shutdown();
         }
 
         private void btn_forward_Click(object sender, EventArgs e)
@@ -170,6 +173,33 @@ namespace RaspiBot
 
         private void btn_camera_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Cef.Initialize(new CefSettings());
+            }
+            catch
+            {
+
+            }
+            cameraForm cameraForm = new cameraForm();
+            if (btn_camera.Text == "Enable Camera")
+            {
+                btn_camera.Text = "Disable Camera";
+
+                
+                cameraForm.Show();
+                cameraForm.Visible = true;
+            }
+            else
+            {
+                btn_camera.Text = "Enable Camera";
+                cameraForm.Visible = false;
+                if (System.Windows.Forms.Application.OpenForms["cameraForm"] != null)
+                {
+                    (System.Windows.Forms.Application.OpenForms["cameraForm"] as cameraForm).exit();
+                }
+
+            }
             btn_arrow.Focus();
         }
     }

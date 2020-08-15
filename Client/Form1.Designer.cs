@@ -40,11 +40,13 @@
             this.btn_arrow = new System.Windows.Forms.Button();
             this.btn_camera = new System.Windows.Forms.Button();
             this.btn_auto = new System.Windows.Forms.Button();
+            this.grBox_control = new System.Windows.Forms.GroupBox();
+            this.grBox_control.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_forward
             // 
-            this.btn_forward.Location = new System.Drawing.Point(133, 132);
+            this.btn_forward.Location = new System.Drawing.Point(120, 54);
             this.btn_forward.Name = "btn_forward";
             this.btn_forward.Size = new System.Drawing.Size(75, 23);
             this.btn_forward.TabIndex = 0;
@@ -54,7 +56,7 @@
             // 
             // btn_right
             // 
-            this.btn_right.Location = new System.Drawing.Point(214, 161);
+            this.btn_right.Location = new System.Drawing.Point(201, 83);
             this.btn_right.Name = "btn_right";
             this.btn_right.Size = new System.Drawing.Size(75, 23);
             this.btn_right.TabIndex = 1;
@@ -64,7 +66,7 @@
             // 
             // btn_left
             // 
-            this.btn_left.Location = new System.Drawing.Point(52, 161);
+            this.btn_left.Location = new System.Drawing.Point(39, 83);
             this.btn_left.Name = "btn_left";
             this.btn_left.Size = new System.Drawing.Size(75, 23);
             this.btn_left.TabIndex = 2;
@@ -74,7 +76,7 @@
             // 
             // btn_backwards
             // 
-            this.btn_backwards.Location = new System.Drawing.Point(133, 190);
+            this.btn_backwards.Location = new System.Drawing.Point(120, 112);
             this.btn_backwards.Name = "btn_backwards";
             this.btn_backwards.Size = new System.Drawing.Size(75, 23);
             this.btn_backwards.TabIndex = 3;
@@ -84,7 +86,7 @@
             // 
             // btn_stand
             // 
-            this.btn_stand.Location = new System.Drawing.Point(133, 161);
+            this.btn_stand.Location = new System.Drawing.Point(120, 83);
             this.btn_stand.Name = "btn_stand";
             this.btn_stand.Size = new System.Drawing.Size(75, 23);
             this.btn_stand.TabIndex = 4;
@@ -111,7 +113,7 @@
             // 
             // btn_arrow
             // 
-            this.btn_arrow.Location = new System.Drawing.Point(12, 295);
+            this.btn_arrow.Location = new System.Drawing.Point(21, 217);
             this.btn_arrow.Name = "btn_arrow";
             this.btn_arrow.Size = new System.Drawing.Size(93, 23);
             this.btn_arrow.TabIndex = 6;
@@ -122,17 +124,17 @@
             // 
             // btn_camera
             // 
-            this.btn_camera.Location = new System.Drawing.Point(111, 295);
+            this.btn_camera.Location = new System.Drawing.Point(120, 217);
             this.btn_camera.Name = "btn_camera";
-            this.btn_camera.Size = new System.Drawing.Size(75, 23);
+            this.btn_camera.Size = new System.Drawing.Size(100, 23);
             this.btn_camera.TabIndex = 7;
-            this.btn_camera.Text = "Camera";
+            this.btn_camera.Text = "Enable Camera";
             this.btn_camera.UseVisualStyleBackColor = true;
             this.btn_camera.Click += new System.EventHandler(this.btn_camera_Click);
             // 
             // btn_auto
             // 
-            this.btn_auto.Location = new System.Drawing.Point(192, 295);
+            this.btn_auto.Location = new System.Drawing.Point(226, 217);
             this.btn_auto.Name = "btn_auto";
             this.btn_auto.Size = new System.Drawing.Size(83, 23);
             this.btn_auto.TabIndex = 8;
@@ -140,24 +142,37 @@
             this.btn_auto.UseVisualStyleBackColor = true;
             this.btn_auto.Click += new System.EventHandler(this.btn_auto_Click);
             // 
+            // grBox_control
+            // 
+            this.grBox_control.Controls.Add(this.btn_auto);
+            this.grBox_control.Controls.Add(this.btn_camera);
+            this.grBox_control.Controls.Add(this.btn_arrow);
+            this.grBox_control.Controls.Add(this.btn_stand);
+            this.grBox_control.Controls.Add(this.btn_backwards);
+            this.grBox_control.Controls.Add(this.btn_left);
+            this.grBox_control.Controls.Add(this.btn_right);
+            this.grBox_control.Controls.Add(this.btn_forward);
+            this.grBox_control.Location = new System.Drawing.Point(13, 78);
+            this.grBox_control.Name = "grBox_control";
+            this.grBox_control.Size = new System.Drawing.Size(322, 257);
+            this.grBox_control.TabIndex = 9;
+            this.grBox_control.TabStop = false;
+            this.grBox_control.Text = "Control";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 330);
-            this.Controls.Add(this.btn_auto);
-            this.Controls.Add(this.btn_camera);
-            this.Controls.Add(this.btn_arrow);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(344, 345);
+            this.Controls.Add(this.grBox_control);
             this.Controls.Add(this.lbl_connection);
-            this.Controls.Add(this.btn_stand);
-            this.Controls.Add(this.btn_backwards);
-            this.Controls.Add(this.btn_left);
-            this.Controls.Add(this.btn_right);
-            this.Controls.Add(this.btn_forward);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.grBox_control.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +190,7 @@
         private System.Windows.Forms.Button btn_arrow;
         private System.Windows.Forms.Button btn_camera;
         private System.Windows.Forms.Button btn_auto;
+        private System.Windows.Forms.GroupBox grBox_control;
     }
 }
 

@@ -22,3 +22,7 @@ C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\RaspiBot.exe.manifest
 C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\RaspiBot.application
 C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.exe.manifest
 C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.application
+C:\Users\lewe2\Desktop\RaspiBot\Client\obj\Debug\RaspiBot.cameraForm.resources
+C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\CefSharp.xml
+C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\CefSharp.Core.xml
+C:\Users\lewe2\Desktop\RaspiBot\Client\bin\Debug\CefSharp.WinForms.xml
