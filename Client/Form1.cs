@@ -8,13 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebSocketSharp;
+using CefSharp;
+using CefSharp.WinForms;
 
 namespace RaspiBot
 {
     public partial class Form1 : Form
     {
         string direction = "empty";
-        string moved = "start";
+        string USS = "empty";
+        string camera = "off";
+        string[] moved = new string[3];
 
         public Form1()
         {
@@ -23,33 +27,38 @@ namespace RaspiBot
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (direction != moved || direction == "empty")
+            if (moved[0] != direction || direction == "empty" || moved[1] != USS || moved[2] != camera)
             {
-                webSocket(direction);
+                webSocket(direction, USS, camera);
             }
 
         }
 
-        private void webSocket(string test)
+        private void webSocket(string direction, string USS, string camera)
         {
-            using (var ws = new WebSocket("ws://31.16.67.247:80"))
+            using (var ws = new WebSocket("ws://31.19.63.145:80"))
             {
                 ws.OnOpen += (sender, e) =>
                 {
                 lbl_connection.Text = "Connected to RaspiBot";
                 lbl_connection.ForeColor = Color.LightGreen;
                 };
-             ws.Connect();
-             ws.Send(test);
-             //ws.Close();
-             moved = test;
+                ws.Connect();
+                ws.Send(direction);
+                ws.Send(USS);
+                ws.Send(camera);
+                //ws.Close();
+                moved[0] = direction;
+                moved[1] = USS;
+                moved[2] = camera;
             }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             direction = "Standing";
-            webSocket(direction);
+            webSocket(direction, USS, camera);
+            Cef.Shutdown();
         }
 
         private void btn_forward_Click(object sender, EventArgs e)
@@ -164,6 +173,33 @@ namespace RaspiBot
 
         private void btn_camera_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Cef.Initialize(new CefSettings());
+            }
+            catch
+            {
+
+            }
+            cameraForm cameraForm = new cameraForm();
+            if (btn_camera.Text == "Enable Camera")
+            {
+                btn_camera.Text = "Disable Camera";
+
+                
+                cameraForm.Show();
+                cameraForm.Visible = true;
+            }
+            else
+            {
+                btn_camera.Text = "Enable Camera";
+                cameraForm.Visible = false;
+                if (System.Windows.Forms.Application.OpenForms["cameraForm"] != null)
+                {
+                    (System.Windows.Forms.Application.OpenForms["cameraForm"] as cameraForm).exit();
+                }
+
+            }
             btn_arrow.Focus();
         }
     }
