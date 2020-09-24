@@ -23,7 +23,7 @@ namespace RaspiBot
 
         private void cameraForm_Load(object sender, EventArgs e)
         {
-            browser = new ChromiumWebBrowser("http://31.19.63.145:8081/");
+            browser = new ChromiumWebBrowser("http://192.168.0.43:8081/");
             this.Controls.Add(browser);
             browser.Dock = DockStyle.Fill;
         }
