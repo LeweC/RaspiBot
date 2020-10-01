@@ -13,8 +13,10 @@ def moveUSS(instructions):
 def directions(instructions): 
     if instructions[0] == "Forward":
         move.forward()
+        print("LOOOOOOS1")
     elif instructions[0] == "Left":
-        move.left()    
+        move.left()
+        print("LOOOOOOS2")    
     elif instructions[0] == "Right":
         move.right()
     elif instructions[0] == "Standing":
