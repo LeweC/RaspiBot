@@ -23,9 +23,6 @@ namespace RaspiBot
         public Form1()
         {
             InitializeComponent();
-            moved[0] = direction;
-            moved[1] = USS;
-            moved[2] = camera;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -38,7 +35,7 @@ namespace RaspiBot
 
         }
 
-        private void webSocket(string direction, string camera, string USS)
+        private void webSocket(string direction, string USS, string camera)
         {
             using (var ws = new WebSocket("ws://192.168.0.43:80"))
             {
