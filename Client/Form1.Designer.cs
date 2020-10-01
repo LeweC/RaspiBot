@@ -178,13 +178,13 @@
             // trackBar_USS
             // 
             this.trackBar_USS.Location = new System.Drawing.Point(6, 41);
-            this.trackBar_USS.Maximum = 500;
-            this.trackBar_USS.Minimum = 100;
+            this.trackBar_USS.Maximum = 100;
+            this.trackBar_USS.Minimum = 20;
             this.trackBar_USS.Name = "trackBar_USS";
             this.trackBar_USS.Size = new System.Drawing.Size(309, 45);
             this.trackBar_USS.SmallChange = 2;
             this.trackBar_USS.TabIndex = 1;
-            this.trackBar_USS.Value = 300;
+            this.trackBar_USS.Value = 60;
             // 
             // lbl_distance
             // 
