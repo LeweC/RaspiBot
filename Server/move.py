@@ -653,7 +653,7 @@ def forward():
         time.sleep(0.3)
 
 def sensor_free(angle):
-    pwm.set_pwm(14, 0, int(angle))
+    pwm.set_pwm(14, 0, int(angle[1]))
 
 def sensor_right():
     pwm.set_pwm(14, 0, 100)

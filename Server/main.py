@@ -8,7 +8,7 @@ def handler(instructions):
     moveUSS(instructions)
        
 def moveUSS(instructions):
-    move.sensor_free(instructions[1])
+    move.sensor_free(instructions)
 
 def directions(instructions): 
     if instructions[0] == "Forward":
