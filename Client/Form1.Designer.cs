@@ -42,8 +42,8 @@
             this.btn_auto = new System.Windows.Forms.Button();
             this.grBox_control = new System.Windows.Forms.GroupBox();
             this.grB_Senor = new System.Windows.Forms.GroupBox();
-            this.lbl_distance = new System.Windows.Forms.Label();
             this.trackBar_USS = new System.Windows.Forms.TrackBar();
+            this.lbl_distance = new System.Windows.Forms.Label();
             this.grBox_control.SuspendLayout();
             this.grB_Senor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_USS)).BeginInit();
@@ -175,6 +175,15 @@
             this.grB_Senor.TabStop = false;
             this.grB_Senor.Text = "Ultrasonic Senor";
             // 
+            // trackBar_USS
+            // 
+            this.trackBar_USS.Location = new System.Drawing.Point(6, 41);
+            this.trackBar_USS.Maximum = 100;
+            this.trackBar_USS.Name = "trackBar_USS";
+            this.trackBar_USS.Size = new System.Drawing.Size(309, 45);
+            this.trackBar_USS.TabIndex = 1;
+            this.trackBar_USS.Value = 50;
+            // 
             // lbl_distance
             // 
             this.lbl_distance.AutoSize = true;
@@ -184,13 +193,6 @@
             this.lbl_distance.Size = new System.Drawing.Size(80, 20);
             this.lbl_distance.TabIndex = 0;
             this.lbl_distance.Text = "Distance";
-            // 
-            // trackBar_USS
-            // 
-            this.trackBar_USS.Location = new System.Drawing.Point(6, 41);
-            this.trackBar_USS.Name = "trackBar_USS";
-            this.trackBar_USS.Size = new System.Drawing.Size(309, 45);
-            this.trackBar_USS.TabIndex = 1;
             // 
             // Form1
             // 

@@ -16,7 +16,7 @@ namespace RaspiBot
     public partial class Form1 : Form
     {
         string direction = "empty";
-        string USS = "empty";
+        string USS = "50";
         string camera = "off";
         string[] moved = new string[3];
 
