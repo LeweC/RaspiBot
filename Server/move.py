@@ -653,7 +653,8 @@ def forward():
         time.sleep(0.3)
 
 def sensor_free(angle):
-    print("--------------------Arrived--------------------")
+    print("--------------------Arrived with--------------------")
+    print(angle)
     pwm.set_pwm(14, 0, angle)
 
 def sensor_right():
