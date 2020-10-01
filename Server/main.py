@@ -5,7 +5,10 @@ import random
 
 def handler(instructions):
     directions(instructions)
-    moveUSS(instructions)
+    
+    angle = instructions[1]
+    intAngle = int(angle)
+    moveUSS(intAngle)
        
 def moveUSS(instructions):
     move.sensor_free(instructions)

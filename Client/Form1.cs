@@ -23,6 +23,9 @@ namespace RaspiBot
         public Form1()
         {
             InitializeComponent();
+            moved[0] = direction;
+            moved[1] = USS;
+            moved[2] = camera;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
