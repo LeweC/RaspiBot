@@ -652,26 +652,23 @@ def forward():
             step = 1
         time.sleep(0.3)
 
+def sensor_free(angle):
+    pwm.set_pwm(14, 0, angle)
 
 def sensor_right():
     pwm.set_pwm(14, 0, 100)
 
-
 def sensor_left():
     pwm.set_pwm(14, 0, 500)
-
 
 def sensor_middle():
     pwm.set_pwm(14, 0, 300)
 
-
 def release():
     pwm.set_all_pwm(0, 0)
 
-
 def clean_all():
     pwm.set_all_pwm(0, 0)
-
 
 def destroy():
     clean_all()

@@ -5,8 +5,10 @@ import random
 
 def handler(instructions):
     directions(instructions)
+    moveUSS(instructions)
        
-
+def moveUSS(instructions):
+    move.sensor_free(instructions[1])
 
 def directions(instructions): 
     if instructions[0] == "Forward":

@@ -27,6 +27,7 @@ namespace RaspiBot
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            USS = trackBar_USS.Value.ToString();
             if (moved[0] != direction || direction == "empty" || moved[1] != USS || moved[2] != camera)
             {
                 webSocket(direction, USS, camera);

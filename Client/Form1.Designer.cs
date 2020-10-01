@@ -41,7 +41,12 @@
             this.btn_camera = new System.Windows.Forms.Button();
             this.btn_auto = new System.Windows.Forms.Button();
             this.grBox_control = new System.Windows.Forms.GroupBox();
+            this.grB_Senor = new System.Windows.Forms.GroupBox();
+            this.lbl_distance = new System.Windows.Forms.Label();
+            this.trackBar_USS = new System.Windows.Forms.TrackBar();
             this.grBox_control.SuspendLayout();
+            this.grB_Senor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_USS)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_forward
@@ -159,13 +164,42 @@
             this.grBox_control.TabStop = false;
             this.grBox_control.Text = "Control";
             // 
+            // grB_Senor
+            // 
+            this.grB_Senor.Controls.Add(this.trackBar_USS);
+            this.grB_Senor.Controls.Add(this.lbl_distance);
+            this.grB_Senor.Location = new System.Drawing.Point(13, 350);
+            this.grB_Senor.Name = "grB_Senor";
+            this.grB_Senor.Size = new System.Drawing.Size(321, 92);
+            this.grB_Senor.TabIndex = 10;
+            this.grB_Senor.TabStop = false;
+            this.grB_Senor.Text = "Ultrasonic Senor";
+            // 
+            // lbl_distance
+            // 
+            this.lbl_distance.AutoSize = true;
+            this.lbl_distance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_distance.Location = new System.Drawing.Point(115, 16);
+            this.lbl_distance.Name = "lbl_distance";
+            this.lbl_distance.Size = new System.Drawing.Size(80, 20);
+            this.lbl_distance.TabIndex = 0;
+            this.lbl_distance.Text = "Distance";
+            // 
+            // trackBar_USS
+            // 
+            this.trackBar_USS.Location = new System.Drawing.Point(6, 41);
+            this.trackBar_USS.Name = "trackBar_USS";
+            this.trackBar_USS.Size = new System.Drawing.Size(309, 45);
+            this.trackBar_USS.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(344, 345);
+            this.ClientSize = new System.Drawing.Size(344, 454);
+            this.Controls.Add(this.grB_Senor);
             this.Controls.Add(this.grBox_control);
             this.Controls.Add(this.lbl_connection);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -173,6 +207,9 @@
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.grBox_control.ResumeLayout(false);
+            this.grB_Senor.ResumeLayout(false);
+            this.grB_Senor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_USS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +228,9 @@
         private System.Windows.Forms.Button btn_camera;
         private System.Windows.Forms.Button btn_auto;
         private System.Windows.Forms.GroupBox grBox_control;
+        private System.Windows.Forms.GroupBox grB_Senor;
+        private System.Windows.Forms.Label lbl_distance;
+        private System.Windows.Forms.TrackBar trackBar_USS;
     }
 }
 
