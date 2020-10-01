@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RaspiBot.exe" size="20960">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RaspiBot.exe" size="20448">
       <assemblyIdentity name="RaspiBot" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lnqvnOh8hT/nq9JHjiCvi1ZAauZ+x9jL6TX6mCBjzBI=</dsig:DigestValue>
+        <dsig:DigestValue>hXQ2dwRoAuSfULMgPbZYo5nD5IN0gfMWTljqWTi3YUw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

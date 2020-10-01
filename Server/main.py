@@ -13,8 +13,9 @@ def handler(instructions):
     angle = instructions[1]
     intAngle = int(angle)
     #intAngle = intAngle * 5
-    moveUSS(intAngle)
-    #if intAngle
+    if intAngle != done:
+        moveUSS(intAngle)
+        done = intAngle
 
 def moveUSS(instructions):
     move.sensor_free(instructions)
