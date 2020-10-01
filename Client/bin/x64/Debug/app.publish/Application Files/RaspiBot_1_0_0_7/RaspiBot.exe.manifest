@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="RaspiBot.exe" version="1.0.0.7" publicKeyToken="5dab10e9828d509c" language="neutral" processorArchitecture="amd64" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="RaspiBot" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
+    <commandLine file="RaspiBot.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC-Manifestoptionen
+          Wenn Sie die Zugangsebene für das Windows-Benutzerkonto ändern möchten, ersetzen Sie den 
+          requestedExecutionLevel-Knoten durch eines der folgenden Elemente.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Löschen Sie den requestedExecutionLevel-Knoten, wenn Sie 
+         zum Gewährleisten der Abwärtskompatibilität die Datei- und Registrierungsvirtualisierung verwenden möchten.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RaspiBot.exe" size="19424">
+      <assemblyIdentity name="RaspiBot" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SQWwYSt8Pw5X5dtapw+I3b1usBdkPbszl0UmZo0xFao=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="websocket-sharp.dll" size="251712">
+      <assemblyIdentity name="websocket-sharp" version="1.0.2.5" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>cRQiEodTUoUGNiJEsYCsd1JX0kNmx88vOG6J36btFng=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="RaspiBot.exe.config" size="184">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>X+GtgC9o18R9u9jmAWK6iKuu0WLaXTgchdPkk1MRli4=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-6CHD3GC\lewe2" issuerKeyHash="fa93792a302d9207811b04c3f77754ef7491cdf7" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>7cjR5hO2jnAtDlsAHczyPnlXhLrOq/5qsIopHfH9BpM=</DigestValue></Reference></SignedInfo><SignatureValue>Jl85CB/JisNRpfhbyucuQpwR54UQpAYLlboHw3wjaKNIUaDEezS/7g/Yz9kQ+3ApNVc8j6CCbbRYcsX6oJph7yxTBc1wjt0Qz7+0++uKJnrLYwQGNsVlsj0SW8muQqPz9nV8VYM1KYXHfE3Xknq7J1IG950b5DX2i4e8HseW0JM=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>6WU7KcLKcLYHxxTZB0HuMIeQMxAq6RR03zRmTwCYfl/mpJDG3ayhmo4UjGgdr56lDEGNoSOkeTh8IfzeX/SXeMpQJe3yHfjNAerYMeDbbU695Fwz9D86g0P5XTryY7ATsNvJtQVoqReKDLbjZ4Abh8FtlOqWyAHeEfaMTfZ2iSU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="9306fdf11d298ab06afeabceba8457793ef2cc1d005b0e2d708eb613e6d1c8ed" Description="" Url=""><as:assemblyIdentity name="RaspiBot.exe" version="1.0.0.7" publicKeyToken="5dab10e9828d509c" language="neutral" processorArchitecture="amd64" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-6CHD3GC\lewe2</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Cz1UvcXqqwcMUPHVv48d3azMJdn1CI+T+w/Fi56wDAo=</DigestValue></Reference></SignedInfo><SignatureValue>gjS82LHSSEywIWBBlA/BFuZgV2Ysx64BfpuYOysr90/Jdga0G23slqOs7ufwKkUQhIpjbkEwS3NhcJe4VDKvhGX44tMWH0av34EW2VF+kwTIFPVm2Dpd/XD8w382t67g7buglEjk+zOmaG2Xk00Z3WFlAmGvpiI5PpLNUKVpgr8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>6WU7KcLKcLYHxxTZB0HuMIeQMxAq6RR03zRmTwCYfl/mpJDG3ayhmo4UjGgdr56lDEGNoSOkeTh8IfzeX/SXeMpQJe3yHfjNAerYMeDbbU695Fwz9D86g0P5XTryY7ATsNvJtQVoqReKDLbjZ4Abh8FtlOqWyAHeEfaMTfZ2iSU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQflIAnTkaNoVA8TQUUaQ+zDANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADYAQwBIAEQAMwBHAEMAXABsAGUAdwBlADIwHhcNMjAwNTMxMTcyODIwWhcNMjEwNTMxMjMyODIwWjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADYAQwBIAEQAMwBHAEMAXABsAGUAdwBlADIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOllOynCynC2B8cU2QdB7jCHkDMQKukUdN80Zk8AmH5f5qSQxt2soZqOFIxoHa+epQxBjaEjpHk4fCH83l/0l3jKUCXt8h34zQHq2DHg221OveRcM/Q/OoND+V068mOwE7DbybUFaKkXigy242eAG4fBbZTqlsgB3hH2jE32doklAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAPdXFppPy8bET6lsrQKxDIUrRJs8Vn+afJCx7aCcQ7Gf6pqb9/yhRi7Fr7uFY7uONTnNciwGOrCc9RTX+1G1duhfGTq7jglV1HA8TdDGkKZgHwJlgLJQSDcHAKUAAxwtJQSnkQoeuJHLNOG8zTUPYlT8D/4j5dRktbZzCq/uM7gU=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
