@@ -4,6 +4,9 @@ import time
 import random
 
 def handler(instructions):
+    if instructions[1] == "empty":
+        instructions[1] = "0"
+    
     directions(instructions)
     
     angle = instructions[1]
