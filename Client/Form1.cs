@@ -38,7 +38,7 @@ namespace RaspiBot
 
         }
 
-        private void webSocket(string direction, string USS, string camera)
+        private void webSocket(string direction, string USS = "0", string camera)
         {
             using (var ws = new WebSocket("ws://192.168.0.43:80"))
             {
