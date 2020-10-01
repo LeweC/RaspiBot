@@ -11,6 +11,7 @@ def handler(instructions):
     
     angle = instructions[1]
     intAngle = int(angle)
+    intAngle = intAngle * 2
     moveUSS(intAngle)
        
 def moveUSS(instructions):
