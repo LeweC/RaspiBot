@@ -16,10 +16,11 @@ async def hello(websocket, path):
             print(f"< {message}")
             global instructions
             global counter 
-            if counter == 3:
+            if counter == 3:            #[0] = Moving direction [1]= Ultrasonic sensor angle [2]= camera angle
                 counter = 0
             instructions[counter] = message
             counter = counter + 1
+            print(instructions)
         except KeyboardInterrupt:
             print("Ending Scipt")
     
