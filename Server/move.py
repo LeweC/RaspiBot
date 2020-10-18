@@ -395,7 +395,6 @@ def right_I(pos, wiggle, heightAdjust=0):
                 else:
                     pwm.set_pwm(7, 0, pwm7 + height_change)
 
-
 def right_II(pos, wiggle, heightAdjust=0):
     # wiggle = -wiggle
     if pos == 0:
@@ -455,7 +454,6 @@ def right_II(pos, wiggle, heightAdjust=0):
                     pwm.set_pwm(9, 0, pwm9 - height_change)
                 else:
                     pwm.set_pwm(9, 0, pwm9 + height_change)
-
 
 def right_III(pos, wiggle, heightAdjust=0):
     # wiggle = -wiggle
@@ -517,7 +515,6 @@ def right_III(pos, wiggle, heightAdjust=0):
                 else:
                     pwm.set_pwm(11, 0, pwm11 + height_change)
 
-
 def move(step_input, speed, command):
     step_I = step_input
     step_II = step_input + 2
@@ -552,7 +549,6 @@ def move(step_input, speed, command):
         right_II(step_II, -speed, 0)
         left_III(step_II, speed, 0)
 
-
 def stand():
     pwm.set_pwm(0, 0, 300)
     pwm.set_pwm(1, 0, 300)
@@ -566,7 +562,6 @@ def stand():
     pwm.set_pwm(9, 0, 300)
     pwm.set_pwm(10, 0, 300)
     pwm.set_pwm(11, 0, 300)
-
 
 def autonom():
     try:
@@ -619,7 +614,6 @@ def autonom():
         ultrasonic.closing()
         time.sleep(1)
 
-
 def right():
     global step
     # step += 1
@@ -630,7 +624,6 @@ def right():
             step = 1
         time.sleep(0.3)
 
-
 def left():
     global step
     # step += 1
@@ -640,7 +633,6 @@ def left():
         if step == 5:
             step = 1
         time.sleep(0.3)
-
 
 def forward():
     global step

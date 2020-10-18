@@ -13,7 +13,6 @@ time_elapsed = 0
 GPIO.setup(pinTrigger, GPIO.OUT)
 GPIO.setup(pinEcho, GPIO.IN)
 
-
 def measure():
     # set Trigger to HIGH
     GPIO.output(pinTrigger, True)

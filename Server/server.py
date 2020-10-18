@@ -24,8 +24,6 @@ async def hello(websocket, path):
         except KeyboardInterrupt:
             print("Ending Scipt")
     
-
-
 @asyncio.coroutine
 def mainloop():
     while True:
